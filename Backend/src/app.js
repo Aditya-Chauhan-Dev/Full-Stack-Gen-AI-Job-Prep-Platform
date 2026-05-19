@@ -9,7 +9,7 @@ dns.setServers(['1.1.1.1','8.8.8.8']);
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin: "https://full-stack-gen-ai-job-prep-platform-1.onrender.com",
+    origin: "https://full-stack-gen-ai-job-prep-platform-24ys.onrender.com",
     credentials: true
 }))
 
