@@ -10,7 +10,7 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
     origin: ["http://localhost:5173",
-    "https://full-stack-gen-ai-job-prep-platform-1.onrender.com"],
+    "https://full-stack-gen-ai-job-prep-platform-24ys.onrender.com"],
     credentials: true
 }))
 
