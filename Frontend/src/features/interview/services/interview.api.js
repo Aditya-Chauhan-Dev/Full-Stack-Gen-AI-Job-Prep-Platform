@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://localhost:3000|| https://full-stack-gen-ai-job-prep-platform-1.onrender.com",
+    baseURL: "https://full-stack-gen-ai-job-prep-platform-1.onrender.com", //http://localhost:3000
     withCredentials: true,
 })
 
