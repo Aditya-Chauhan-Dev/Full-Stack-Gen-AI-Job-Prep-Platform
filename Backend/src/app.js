@@ -6,6 +6,7 @@ const cors = require("cors")
 const app = express()
 
 dns.setServers(['1.1.1.1','8.8.8.8']);
+app.set("trust proxy", 1);
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
