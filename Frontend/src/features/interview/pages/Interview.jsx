@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import '../style/interview.scss'
 import { useInterview } from '../hooks/useInterview.js'
 import { useNavigate, useParams } from 'react-router'
+import { useAuth } from '../../auth/hooks/useAuth.js'
 
 
 
@@ -10,6 +11,9 @@ const NAV_ITEMS = [
     { id: 'behavioral', label: 'Behavioral Questions', icon: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>) },
     { id: 'roadmap', label: 'Road Map', icon: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11" /></svg>) },
 ]
+
+const { handleLogout } = useAuth();
+const navigate = useNavigate();
 
 // ── Sub-components ────────────────────────────────────────────────────────────
 const QuestionCard = ({ item, index }) => {
@@ -185,6 +189,15 @@ const Interview = () => {
                             ))}
                         </div>
                     </div>
+
+                    <button
+                    className='button'
+                    onClick={async () => {
+                        await handleLogout();
+                        navigate("/login");
+                    }}>
+                    Logout
+                </button>
 
                 </aside>
             </div>
